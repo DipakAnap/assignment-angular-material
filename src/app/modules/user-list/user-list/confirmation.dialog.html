@@ -1,0 +1,8 @@
+<div class="confirmation" >
+  <h3 mat-dialog-title>Delete user</h3>
+  <div class="are-you-sure" mat-dialog-content>Are you sure you want to delete {{data.user.name}}?</div>
+  <div mat-dialog-actions class="actions" >
+    <button  class="no" mat-button mat-dialog-close (click)="onChooseConfirmation('no')" >No</button>
+    <button class="yes" mat-button mat-dialog-close (click)="onChooseConfirmation('yes')" >Yes</button>
+  </div>
+</div>

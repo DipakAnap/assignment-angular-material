@@ -1,0 +1,111 @@
+/* Update user dialog css start */
+.user-update{
+  width: 450px;
+  h3{
+    color: #000;
+    font-family: 'Poppins';
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(77, 77, 77, 0.2);
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+  }
+
+  .actions{
+    text-align: right;
+
+    button{
+      padding: 5px 19px;
+      border-radius: 50px;
+      border-width: 1px;
+      background: transparent;
+      margin-left: 10px;
+      cursor: pointer;
+      font-family: 'Poppins';
+      border: 0px;
+
+      &.no{
+        color: #00a99d;
+        border-color: #00a99d;
+      }
+
+      &.yes{
+        color: #fff;
+        background-color: #00a99d;
+        border-color: #00a99d;
+      }
+    }
+  }
+
+  form{
+    margin-top: 15px;
+  }
+  /* Mat Input field start*/
+  ::ng-deep .mat-form-field {
+    font-family: 'Poppins';
+    .mat-form-field-wrapper{
+      padding-bottom: 12px;
+    }
+    .mat-form-field-flex{
+      border: 1px solid rgba(77, 77, 77, 0.3);
+      padding: 5px 10px;
+    }
+    .mat-form-field-label {
+      span{
+        background: #fff;
+      }
+    }
+    .mat-form-field-infix{
+      border: 0px;
+    }
+    .mat-form-field-underline {
+      display: none;
+    }
+    .mat-form-field-ripple {
+    }
+    .mat-form-field-required-marker {
+    }
+
+    &.mat-focused{
+
+      .mat-input-element {
+        caret-color: #00a99d;
+      }
+      .mat-form-field-flex{
+        border-color: #00a99d;
+      }
+      .mat-form-field-label {
+        color: #00a99d;
+      span{
+          padding: 5px;
+        }
+      }
+    }
+  }
+  /* Mat Input field end*/
+
+  /* Radio button start */
+  .mat-radio-button{
+    font-family: 'Poppins';
+  }
+
+  ::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+    border-color: #00a99d; 
+  }
+
+  ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle{
+    color: #00a99d;
+    background-color: #00a99d;
+  }
+
+  ::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+      background-color: #00a99d;
+  }
+  label{
+    font-family: 'Poppins';
+    font-size: 16px;
+  }
+  /* Radio button start */
+
+}
+/* Update user dialog css end */

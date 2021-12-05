@@ -1,0 +1,47 @@
+<div class="user-update" >
+  <h3 mat-dialog-title>Edit user</h3>
+
+  <div>
+    <form class="example-form">
+      <div fxLayout="column" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+        <mat-form-field fxFlex color="accent">
+          <input [(ngModel)]="data.user.name" [name]="'name'" matInput type="text" placeholder="Name">
+        </mat-form-field>
+        <mat-form-field fxFlex color="accent">
+          <input matInput type="email" placeholder="Email" [(ngModel)]="data.user.email" [name]="'email'">
+        </mat-form-field>
+
+        <div fxLayout="row" fxFlexFill fxLayout.lt-sm="row" fxLayoutGap="16px">
+          <label>Gender</label>
+          <div>
+            <mat-radio-group fxLayout="row" fxLayoutGap="16px" aria-label="Select an option">
+              <div fxFlex >
+                <mat-radio-button (click)="onChooseGender('Male')" [checked]="data.user.gender == 'Male'" name="Male" value="Male">Male</mat-radio-button>
+              </div>
+              <div fxFlex>
+                <mat-radio-button (click)="onChooseGender('Female')" [checked]="data.user.gender == 'Female'" name="Female" value="Female" id="Female" >Female</mat-radio-button>
+              </div>
+            </mat-radio-group>
+          </div>
+        </div>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Date of Birth</mat-label>
+          <input [(ngModel)]="data.user.date" name="dob" matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Address</mat-label>
+          <textarea [(ngModel)]="data.user.address" name="address" matInput placeholder="Address"></textarea>
+        </mat-form-field>
+
+        <div class="actions">
+          <button class="yes" mat-button mat-dialog-close (click)="update()" >Submit</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>

@@ -1,0 +1,86 @@
+<section class="user-list">
+  <div fxLayout="row" fxLayoutGap="15px" fxLayout.xs="column" >
+
+    <!-- Table section start -->
+    <div fxFlexOrder.xs="2" fxFlex="85" class="box">
+      <div class="">
+      <table mat-table class="" [dataSource]="users">
+
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? masterToggle() : null"
+              [checked]="selection.hasValue() && isAllSelected()"
+              [indeterminate]="selection.hasValue() && !isAllSelected()"
+              [aria-label]="checkboxLabel()">
+            </mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()"
+              (change)="$event ? selection.toggle(row) : null"
+              [checked]="selection.isSelected(row)"
+              [aria-label]="checkboxLabel(row)">
+            </mat-checkbox>
+          </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Email Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <!-- Gender Column -->
+        <ng-container matColumnDef="gender">
+          <th mat-header-cell *matHeaderCellDef> Gender </th>
+          <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+        </ng-container>
+
+        <!-- Address Column -->
+        <ng-container matColumnDef="address">
+          <th mat-header-cell *matHeaderCellDef> Address </th>
+          <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+        </ng-container>
+
+        <!-- Address Column -->
+        <ng-container matColumnDef="dob">
+          <th mat-header-cell *matHeaderCellDef> Date of Birth </th>
+          <td mat-cell *matCellDef="let element"> {{element.date | date}} </td>
+        </ng-container>
+
+        <!-- Action column -->
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element; let i = index">
+            <a href="javascript:void(0)" (click)="openEditUserDialog(i)" >
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            </a>
+
+            <a href="javascript:void(0)" (click)="openDeletConfirmationDialog(i)" >
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </a>
+
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </div>
+
+    </div>
+    <!-- Table section end -->
+    <div fxFlexOrder.xs="1" fxFlex="15" class="box">
+      small
+    </div>
+  </div>
+</section>

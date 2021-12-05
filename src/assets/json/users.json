@@ -1,0 +1,7 @@
+[
+  {"name": "Sew Joen", "email": "sewjoen@gmail.com", "gender": "Male", "address": "471 Duncan", "date": "05/04/1980"},
+  {"name": "John Doe", "email": "johndoe@gmail.com", "gender": "Female", "address": "471 Duncan", "date": "10/04/1990"},
+  {"name": "Rose Smith", "email": "rosesmith@gmail.com", "gender": "Female", "address": "471 Duncan", "date": "05/04/1999"},
+  {"name": "Droid Crew", "email": "droidcrew@gmail.com", "gender": "Male", "address": "471 Duncan", "date": "05/04/1980"},
+  {"name": "Deo Rosa", "email": "deorosa@gmail.com", "gender": "Male", "address": "471 Duncan", "date": "05/04/1980"}
+]
