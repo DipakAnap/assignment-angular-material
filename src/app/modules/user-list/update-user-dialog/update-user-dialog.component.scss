@@ -49,6 +49,7 @@
     .mat-form-field-flex{
       border: 1px solid rgba(77, 77, 77, 0.3);
       padding: 5px 10px;
+      background-color: transparent;
     }
     .mat-form-field-label {
       span{
@@ -76,10 +77,15 @@
       }
       .mat-form-field-label {
         color: #00a99d;
-      span{
+        span{
           padding: 5px;
         }
       }
+    }
+
+    ::ng-deep mat-label{
+      padding: 5px;
+      background: #fff;
     }
   }
   /* Mat Input field end*/
@@ -109,3 +115,24 @@
 
 }
 /* Update user dialog css end */
+
+/*Media queries  start*/
+/* Portrait tablets and small desktops */
+@media screen and (max-width: 1199px) {
+}
+
+@media screen and (max-width: 992px) {
+}
+
+/* Landscape phones and portrait tablets */
+@media screen and (max-width: 767px) {
+  .user-update{
+    width: auto;
+  }
+}
+
+/* Portrait phones and smaller */
+@media screen and (max-width: 480px) {
+
+}
+

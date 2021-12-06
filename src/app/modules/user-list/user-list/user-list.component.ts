@@ -28,6 +28,10 @@ export class UserListComponent implements OnInit, AfterViewInit {
 
   list = [];
   selectedUser:any = {};
+  genderCounts:any = {
+    male: 0,
+    female: 0
+  };
 
   constructor(private http: HttpClient, public dialog: MatDialog) { }
 
@@ -46,6 +50,15 @@ export class UserListComponent implements OnInit, AfterViewInit {
   }
 
   updateUserData(){
+    this.genderCounts.male = 0;
+    this.genderCounts.female = 0;
+
+    this.list.forEach((item)=>{
+      if(item){
+        item.gender == 'Male' ? this.genderCounts.male++ : this.genderCounts.female++;
+      }
+    });
+
     this.users = new MatTableDataSource<any>(this.list);
     this.users.paginator = this.paginator;
   }
@@ -112,9 +125,11 @@ export class UserListComponent implements OnInit, AfterViewInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.selectedUser = result;
-      this.list[index] = result;
-      this.updateUserData();
+      if(result){
+        this.selectedUser = result;
+        this.list[index] = result;
+        this.updateUserData();
+      }
     });
   }
 }

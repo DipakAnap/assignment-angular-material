@@ -4,6 +4,10 @@
   left: 0px;
   width: 100%;
 
+  .mat-toolbar, .mat-toolbar h1, .mat-toolbar h2, .mat-toolbar h3, .mat-toolbar h4, .mat-toolbar h5, .mat-toolbar h6 {
+    font-family: 'Poppins';
+  }
+
   /* toolbar start */
   .mat-toolbar{
     background: #fff;
