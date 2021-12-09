@@ -58,6 +58,7 @@
     }
     .mat-form-field-infix{
       border: 0px;
+      padding-bottom: 5px;
     }
     .mat-form-field-underline {
       display: none;
@@ -89,6 +90,19 @@
     }
   }
   /* Mat Input field end*/
+
+  /* Date picker start */
+  .date-picker ::ng-deep {
+    .mat-form-field-suffix{
+      top: 5px;
+    }
+  }
+  .mat-datepicker-toggle ::ng-deep{
+    button{
+      height: 15px;
+    }
+  }
+  /* Date picker end */
 
   /* Radio button start */
   .mat-radio-button{
